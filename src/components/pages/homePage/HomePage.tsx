@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import "../../../index.css";
 import Counter from "../conuter/Conuter";
 import Generics from "../generics/Generics";
@@ -13,11 +14,6 @@ interface User {
 export default function HomePage() {
   const [count, setCount] = useState<number>(1);
   const [users, setUsers] = useState<User[] | null>([]);
-  useEffect(() => {
-    console.log("mounting...");
-
-    return (): void => console.log("unmounting");
-  }, []);
   return (
     <>
       <Heading title="It's Heading title by type aliases" />
@@ -29,11 +25,16 @@ export default function HomePage() {
         laborum, officiis doloribus asperiores in a voluptas eos porro optio
         saepe error amet.
       </Section>
-      <Counter setCount={setCount}>Count is {count}</Counter>
+      <Counter setCount={setCount} count={count}>
+        Count is {count}
+      </Counter>
       <Generics
         items={["🍵 Tea", "🧑‍💻 Code", "💤 Sleep"]}
         render={(item: string) => <span className="bold">{item}</span>}
       />
+      <Link to="ref">
+        <button>Ref</button>
+      </Link>
     </>
   );
 }
