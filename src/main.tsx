@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
+import Reducer from "./components/hooks/Reducer";
 import Ref from "./components/hooks/Ref";
-import "./index.css";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +13,10 @@ const router = createBrowserRouter([
   {
     path: "ref",
     element: <Ref />,
+  },
+  {
+    path: "reducer",
+    element: <Reducer />,
   },
 ]);
 

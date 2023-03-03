@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "../../../index.css";
 import Counter from "../conuter/Conuter";
 import Generics from "../generics/Generics";
@@ -16,6 +16,11 @@ export default function HomePage() {
   const [users, setUsers] = useState<User[] | null>([]);
   return (
     <>
+      <header>
+        <nav>
+          <NavLink to="reducer">Reducer</NavLink>
+        </nav>
+      </header>
       <Heading title="It's Heading title by type aliases" />
       <Section title="Explicit title">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quidem
