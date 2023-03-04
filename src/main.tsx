@@ -2,6 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
+import {
+  CounterContextProvider,
+  initState,
+} from "./components/hooks/context/CounterContext";
 import Reducer from "./components/hooks/Reducer";
 import Ref from "./components/hooks/Ref";
 
@@ -16,7 +20,14 @@ const router = createBrowserRouter([
   },
   {
     path: "reducer",
-    element: <Reducer />,
+    element: (
+      <CounterContextProvider
+        count={initState.count}
+        inputText={initState.inputText}
+      >
+        <Reducer />
+      </CounterContextProvider>
+    ),
   },
 ]);
 

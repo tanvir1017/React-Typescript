@@ -10,6 +10,8 @@
 
 # useReducer
 
+# useContext
+
 ```ts
 import { changeEvent } from "react";
 // Event for  input
