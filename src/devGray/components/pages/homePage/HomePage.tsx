@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import "../../../index.css";
+import "../../../../index.css";
 import Counter from "../conuter/Conuter";
 import Generics from "../generics/Generics";
 import Heading from "../heading/Heading";

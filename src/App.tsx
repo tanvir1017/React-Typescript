@@ -1,7 +1,38 @@
-import HomePage from "./components/pages/homePage/HomePage";
+import { NavLink, Outlet } from "react-router-dom";
 import "./index.css";
 function App() {
-  return <HomePage />;
+  return (
+    <>
+      <header>
+        <nav>
+          <NavLink
+            style={({ isActive, isPending }) => {
+              return {
+                color: isActive ? "red" : "inherit",
+              };
+            }}
+            to="devgray"
+          >
+            DevGray
+          </NavLink>
+          <NavLink
+            style={({ isActive, isPending }) => {
+              return {
+                color: isActive ? "red" : "inherit",
+              };
+            }}
+            to="anisul"
+          >
+            Anisul Islam
+          </NavLink>
+        </nav>
+      </header>
+
+      <main>
+        <Outlet />
+      </main>
+    </>
+  );
 }
 
 export default App;
